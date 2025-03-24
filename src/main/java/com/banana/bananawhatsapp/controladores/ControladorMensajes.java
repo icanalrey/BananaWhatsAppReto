@@ -2,12 +2,12 @@ package com.banana.bananawhatsapp.controladores;
 
 import com.banana.bananawhatsapp.modelos.Mensaje;
 import com.banana.bananawhatsapp.modelos.Usuario;
-import com.banana.bananawhatsapp.servicios.IServicioMensajeria;
+import com.banana.bananawhatsapp.servicios.mensajeriaService;
 
 import java.util.List;
 
 public class ControladorMensajes {
-    private IServicioMensajeria servicioMensajeria;
+    private mensajeriaService servicioMensajeria;
 
     public boolean enviarMensaje(Integer remitente, Integer destinatario, String texto) {
         try {

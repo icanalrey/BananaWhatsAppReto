@@ -5,7 +5,10 @@ import com.banana.bananawhatsapp.modelos.Usuario;
 import com.banana.bananawhatsapp.util.DBUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -13,9 +16,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+
 class ServicioUsuariosTest {
 
-    IServicioUsuarios servicio;
+
+    usuarioService servicio;
 
     @BeforeEach
     void cleanAndReloadData() {
@@ -40,7 +45,7 @@ class ServicioUsuariosTest {
     }
 
     @Test
-    void dadoUnUsuarioValido_cuandoBorrarUsuario_entoncesUsuarioValido() {
+    void dadoUnUsuarioValido_cuandoBorrarUsuario_entoncesUsuarioValido() throws SQLException {
         Usuario user = new Usuario(2, "Gema", "g@g.com", LocalDate.now(), true);
         boolean userDelete = servicio.borrarUsuario(user);
         assertThat(userDelete, is(true));

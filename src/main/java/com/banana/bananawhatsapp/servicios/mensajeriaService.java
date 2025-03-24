@@ -7,7 +7,7 @@ import com.banana.bananawhatsapp.modelos.Usuario;
 
 import java.util.List;
 
-public interface IServicioMensajeria {
+public interface mensajeriaService {
 
     public Mensaje enviarMensaje(Usuario remitente, Usuario destinatario, String texto) throws UsuarioException, MensajeException;
 
